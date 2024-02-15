@@ -362,7 +362,8 @@ class ScribbleNotifier extends ScribbleNotifierBase
     return Point(
       event.localPosition.dx,
       event.localPosition.dy,
-      pressure: pressureCurve.transform(p),
+      pressure: event.pressure == 0.0 ? 1.0 : event.pressure,
+      // pressure: pressureCurve.transform(p),
     );
   }
 
