@@ -397,10 +397,10 @@ class ScribbleNotifier extends ScribbleNotifierBase
     if (s is Erasing || !s.active) return s;
     if (s is Drawing && s.activeLine == null) return s;
     final currentLine = (s as Drawing).activeLine!;
-    final distanceToLast = currentLine.points.isEmpty
-        ? double.infinity
-        : (currentLine.points.last.asOffset - event.localPosition).distance;
-    if (distanceToLast <= kPrecisePointerPanSlop / s.scaleFactor) return s;
+    // final distanceToLast = currentLine.points.isEmpty
+    //     ? double.infinity
+    //     : (currentLine.points.last.asOffset - event.localPosition).distance;
+    // if (distanceToLast <= kPrecisePointerPanSlop / s.scaleFactor) return s;
     return s.copyWith(
       activeLine: currentLine.copyWith(
         points: [
