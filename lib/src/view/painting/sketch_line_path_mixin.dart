@@ -25,7 +25,7 @@ mixin SketchLinePathMixin {
         line.points.length > 1 &&
         line.points.every((p) => p.pressure == line.points.first.pressure);
     final points = line.points
-        .map((point) => pf.PointVector(point.x, point.y, point.pressure))
+        .map((point) => pf.PointVector(point.x, point.y, 0.5))
         .toList();
     final outlinePoints = pf.getStroke(
       points,
